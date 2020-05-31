@@ -20,7 +20,7 @@
     set_error_handler("errorHandler");
 
     spl_autoload_register(function($nameClass) {
-        $dirClass = "__system__" . DIRECTORY_SEPARATOR . "functions" . DIRECTORY_SEPARATOR . "Classes";
+        $dirClass = "__system__" . DIRECTORY_SEPARATOR . "api" . DIRECTORY_SEPARATOR . "Classes";
         $filepath = $dirClass . DIRECTORY_SEPARATOR . $nameClass . ".php";
 
         if (file_exists($filepath)) {
