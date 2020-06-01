@@ -777,7 +777,7 @@ ul {
     bottom: 0;
     overflow: hidden;
     z-index: 99;
-    border-radius: 4px;
+    border-radius: 4px 4px 0 0;
     -webkit-box-shadow: 4px 4px 20px rgba(0, 0, 0, .5);
     -moz-box-shadow: 4px 4px 20px rgba(0, 0, 0, .5);
     box-shadow: 4px 4px 20px rgba(0, 0, 0, .5);
@@ -821,6 +821,29 @@ ul {
     /* PAGE --> cloud.php */
     .cloud-title {
         width: 40%;
+    }
+
+
+
+    /* MODAL STYLE */
+    .progress-content-modal {
+        width: 80%;
+        left: 10%;
+        top: 2rem;
+    }
+    .close-progress-modal {
+        right: 12%;
+        top: 2.5rem;
+    }
+
+    .my-error-modal {
+        width: 70%;
+        right: 15%;
+        height: 25%;
+        overflow: auto;
+    }
+    .error-text {
+        height: 6rem;
     }
 }
 
