@@ -113,7 +113,7 @@ const writeBase = (pathFunc) => {
                     
                     <h1 class="cloud-title"><i class="fas fa-cloud"></i> ${cloudsName[1] || 'Cloud'}</h1>
                 </div>
-                <div class="folder-path-div" directory-path class="directoryPath">
+                <div class="folder-path-div" directory-path class="directory-path">
                     Folder path:<span></span>
                 </div>
 
@@ -183,7 +183,7 @@ const writeDirectoryUl = (folders, files) => {
 
         directoryFunctions()
     } else {
-        writeUl.innerHTML = `<li>This folder is empty, for now.</li>`
+        writeUl.innerHTML = `<li>This folder is empty for now.</li>`
     }
 }
 

@@ -595,32 +595,6 @@ ul {
     font-size: 14px;
 }
 
-.subLista {
-    position: relative;
-    width: 100%;
-    padding: 0;
-}
-
-.anotherSpanLink {
-    margin-top: .55rem;
-    list-style: none;
-    cursor: pointer;
-    float: left;
-    width: auto;
-    padding-left: 2%;
-}
-
-.anotherSpanLink span {
-    display: block;
-    font-size: 14px;
-    font-family: 'Roboto-Regular';
-}
-
-.anotherSpanLink span i {
-    color: #ffd34e;
-    font-size: 20px;
-}
-
 .write-directory-div li {
     color: #fff;
     list-style: none;
@@ -643,7 +617,7 @@ ul {
     cursor: pointer;
 }
 
-.cloud-left-div .directoryPath {
+.cloud-left-div .directory-path {
     position: absolute;
     top: 40px;
     right: 10px;
@@ -741,7 +715,6 @@ ul {
     font-size: 28px;
     font-weight: bold;
     position: fixed;
-    /* margin-top: .4rem; */
     right: 30%;
     cursor: pointer;
     top: 8.2rem;

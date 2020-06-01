@@ -7,7 +7,7 @@
     <title>Page not found - File Manager</title>
     
     <link rel="stylesheet" type="text/css" 
-        media="screen" href="<?= Project::baseUrl(); ?>assets/css/main.css" />
+        media="screen" href="<?= Project::baseUrl(); ?>assets/css/minified-main.css" />
     <link href="<?= Project::baseUrl(); ?>libs/fontawesome-free-5.8.0-web/css/all.css"
         rel="stylesheet" />
 </head>
