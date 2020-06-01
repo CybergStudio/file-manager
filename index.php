@@ -15,7 +15,11 @@
 		
 	if (file_exists('__system__/' . $URL[1] . '.php')):
 		if (isset($URL[2])):
-			require '__system__/404.php';
+			if ($URL[1] === 'cloud'):
+				require '__system__/' . $URL[1] . '.php';
+			else:
+				require '__system__/404.php';
+			endif;
 		else:
 			require '__system__/' . $URL[1] . '.php';
 		endif;

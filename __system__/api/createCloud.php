@@ -9,7 +9,7 @@
 
             $json = Cloud::validateCloudsName($_POST['cloudsName']);
             if ((int)$json['status'] === 1) {
-                if (!Cloud::createFolder($json['cloudsName'])) {
+                if ($json['cloudsName'] !== '' && !Cloud::createFolder($json['cloudsName'])) {
                     $json['status'] = 0;
                     $json['error'] = 'An error occurred to create the cloud';
                 }

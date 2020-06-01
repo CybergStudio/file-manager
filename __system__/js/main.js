@@ -1,6 +1,7 @@
 const BASE_URL = "http://localhost/file-manager/"
 const BASE_URL2 = "http://localhost/file-manager/__system__/"
 const ROOT_CLOUD = "http://localhost/file-manager/cloud/"
+const ROOT_CLOUD2 = "http://localhost/file-manager/__system__/assets/cloud"
 
 const Toast = Swal.mixin({
 	toast: true,
@@ -36,5 +37,14 @@ const clearAndGetHelpBlock = () => {
 
 	return helpBlock
 }
+
+(function ($) {
+	$.fn.focusTextToEnd = function () {
+		this.focus()
+		var $thisVal = this.val()
+		this.val('').val($thisVal)
+		return this
+	}
+}(jQuery))
 
 information()

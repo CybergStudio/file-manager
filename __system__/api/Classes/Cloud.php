@@ -2,6 +2,50 @@
     class Cloud
     {
         const ROOT = '__system__/assets/cloud/';
+        const DEFAULT_NAME = 'cyberg';
+
+        public static function checkCloud(array $url)
+        {
+            $root = Cloud::ROOT;
+            $data = Cloud::validateCloudsName($url[2], false);
+
+            if ((int)$data['status'] === 1) {
+                if (!isset($url[2]) || $url[2] === '') {
+                    $defaultName = Cloud::DEFAULT_NAME;
+                    $defaultPath = $root . $defaultName;
+
+                    if (!is_dir($defaultPath)) {
+                        mkdir($defaultPath);
+                        $data['cloudsName'] = $defaultName;
+                        $data['status'] = 3;
+                    } else {
+                        for ($i = 1; $i > 0; $i++) {
+                            $defaultNameFor = $defaultName . "({$i})";
+                            $defaultPath = $root . $defaultNameFor;
+
+                            if (!is_dir($defaultPath)) {
+                                mkdir($defaultPath);
+                                $created = true;
+                                break;
+                            }
+                        }
+
+                        if (isset($created) && $created) {
+                            $data['cloudsName'] = $defaultNameFor;
+                            $data['status'] = 3;
+                        }
+                    }
+                } else {
+                    $path = $root . $url[2];
+                    if (!is_dir($path)) {
+                        $data['status'] = 0;
+                        $data['error'] = 'Create your own cloud at home page!';
+                    }
+                }
+            }
+
+            return $data;
+        }
 
         public static function getFolderContent($path = "", $withFiles = true)
         {
@@ -55,7 +99,7 @@
             return $data;
         }
 
-        public static function validateCloudsName(string $cloudsName)
+        public static function validateCloudsName($cloudsName, $checkIfExists = true)
         {
             $cloudsName = Project::nameFormatter($cloudsName);
             $folderPath  = Cloud::ROOT . $cloudsName;
@@ -63,12 +107,10 @@
             $data = [ "status" => 1, "cloudsName" => $cloudsName ];
             
             if (!Cloud::invalidCharacters($cloudsName)) {
-                if ($cloudsName !== "") {
+                if ($cloudsName !== "" && $checkIfExists) {
                     if (is_dir($folderPath)) {
                         $data['error'] = "&nbsp;<strong>{$cloudsName}</strong> &nbsp;is already a cloud name.";
                     }
-                } else {
-                    $data['error'] = "Enter your cloud's name, please.";
                 }
             } else {
                 $data['error'] = 'The characters &nbsp;<strong>\\ / | ? < > * : "</strong> &nbsp;are invalid';

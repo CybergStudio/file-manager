@@ -12,7 +12,7 @@
             </a>
         </li>
         <li class="header-nav-list-item" cloud-link>
-            <a href="#">
+            <a href="<?= Project::baseUrlPhp(); ?>cloud">
                 Cloud &nbsp;<i class="fas fa-angle-down"></i>
 
                 <ul class="header-nav-list-dropdown" all-folders-list>

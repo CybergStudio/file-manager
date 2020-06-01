@@ -40,7 +40,7 @@
                         <div class="form-row">
                             <div class="form-row-inline">
                                 <input type="text" placeholder="Cloud's name" maxlength="13"
-                                    class="form-field" title="Default: cloud" 
+                                    class="form-field" title="Default: <?= Cloud::DEFAULT_NAME; ?>" 
                                     name="cloudsName" clouds-name-field />
                                 <button type="submit" class="form-button">
                                     <i class="fas fa-chevron-circle-right"></i>
